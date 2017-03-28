@@ -44,10 +44,13 @@
                       <%= link_to 'Les histoires', memories_path %>
                     </li>
                     <li>
-                        <%= link_to "About", static_about_path %>
+                      <%= link_to 'Mes histoires', perso_path %>
                     </li>
                     <li>
-                      <%= link_to "Contact", static_contact_path %>
+                        <%= link_to "About", about_path %>
+                    </li>
+                    <li>
+                      <%= link_to "Contact", contact_path %>
                     </li>
                     <% if user_signed_in? %>
                             <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete  %></li>

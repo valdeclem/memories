@@ -7,6 +7,10 @@ class MemoriesController < ApplicationController
     @memories = Memory.all
   end
 
+  def my_memories
+    @memories = Memory.all
+  end
+
   # GET /memories/1
   # GET /memories/1.json
   def show
@@ -69,6 +73,6 @@ class MemoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def memory_params
-      params.require(:memory).permit(:histoire)
+      params.require(:memory).permit(:histoire, :private, :user_id)
     end
 end

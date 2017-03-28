@@ -1,0 +1,43 @@
+<header class="intro-header" style="background-image: url(<%=image_url 'home-bg.jpg' %>)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>My memories</h1>
+                    <hr class="small">
+                    <span class="subheading">L'humaniste que j'étais et que je suis toujours aujourd'hui ...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<p id="notice"><%= notice %></p>
+
+<!-- Main Content -->
+<div class="container">
+  <h1>Memories</h1>
+    <div class="row">
+      <% @memories.each do |memory| %>
+          <div class="col-lg-6">
+            <div class="col-lg-12">
+              <%= memory.histoire %>
+            </div>
+            <div class="col-lg-12">
+              <%= link_to 'Show', memory %>
+              <%= link_to 'Edit', edit_memory_path(memory) %>
+              <%= link_to 'Destroy', memory, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <hr>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <%= link_to 'New Memory', new_memory_path %>
+      </div>
+    </div>
+</div>
+
+<hr>
