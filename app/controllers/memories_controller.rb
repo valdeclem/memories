@@ -1,5 +1,6 @@
 class MemoriesController < ApplicationController
   before_action :set_memory, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /memories
   # GET /memories.json
@@ -8,7 +9,7 @@ class MemoriesController < ApplicationController
   end
 
   def my_memories
-    @memories = Memory.all
+    @memories = current_user.memories
   end
 
   # GET /memories/1
@@ -29,16 +30,11 @@ class MemoriesController < ApplicationController
   # POST /memories.json
   def create
     @memory = Memory.new(memory_params)
-
-    respond_to do |format|
       if @memory.save
-        format.html { redirect_to @memory, notice: 'Memory was successfully created.' }
-        format.json { render :show, status: :created, location: @memory }
+        redirect_to "/perso", notice: 'Memory was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @memory.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /memories/1

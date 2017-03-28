@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20170328084622) do
     t.text     "histoire"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean  "private"
     t.string   "category"
     t.integer  "user_id"
     t.index ["user_id"], name: "index_memories_on_user_id", using: :btree
