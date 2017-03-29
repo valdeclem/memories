@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: 'Ma Memorie', subheading: "L'humaniste que j'étais et que je suis toujours aujourd'hui ..."  %>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Histoire:</strong>
-  <%= @memory.histoire %>
-</p>
+  <p>
+    <strong>Histoire:</strong>
+    <%= @memory.histoire %>
+  </p>
 
-<%= link_to 'Edit', edit_memory_path(@memory) %> |
-<%= link_to 'Back', memories_path %>
+  <%= link_to 'Edit', edit_memory_path(@memory) %> |
+  <%= link_to 'Back', memories_path %>
+</div>

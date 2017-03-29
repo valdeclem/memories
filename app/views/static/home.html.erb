@@ -1,13 +1,7 @@
-<header class="intro-header" style="background-image: url(<%=image_url 'home-bg.jpg' %>)">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Memories</h1>
-                    <hr class="small">
-                    <span class="subheading">L'histoire de ma vie</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<div class="container home">
+  <div class="text-center">
+    <%= image_tag "LogoMESMOTS", class: "logoHome vertical_center" %>
+    <p>Ma boîte à souvenirs</p>
+    <%= link_to "Se connecter", perso_path %>
+  </div>
+</div>

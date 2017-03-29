@@ -5,7 +5,8 @@ class MemoriesController < ApplicationController
   # GET /memories
   # GET /memories.json
   def index
-    @memories = Memory.all
+    @memories
+    redirect_to "/perso"
   end
 
   def my_memories
@@ -69,6 +70,6 @@ class MemoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def memory_params
-      params.require(:memory).permit(:histoire, :private, :user_id)
+      params.require(:memory).permit(:histoire, :category, :user_id)
     end
 end

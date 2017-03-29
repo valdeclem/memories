@@ -19,3 +19,25 @@
 
 	@import "font-awesome-sprockets";
 	@import "font-awesome";
+
+.logo {
+  width:180px;
+  position:absolute;
+}
+.logoHome {
+  z-index: -2;
+}
+
+.home {
+  height:80vh;
+}
+
+.vertical_center {
+  position: relative;
+    top: 50%;
+    -webkit-transform: translateY(50%);
+       -moz-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+         -o-transform: translateY(50%);
+            transform: translateY(50%);
+}

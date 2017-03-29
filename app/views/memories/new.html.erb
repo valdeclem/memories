@@ -1,5 +1,8 @@
-<h1>New Memory</h1>
+<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: 'Ma Memorie', subheading: "L'humaniste que j'étais et que je suis toujours aujourd'hui ..."  %>
 
-<%= render 'form', memory: @memory %>
+<div class="container">
+  <h1>New Memory</h1>
+  <%= render 'form', memory: @memory %>
 
-<%= link_to 'Back', memories_path %>
+  <%= link_to 'Back', memories_path %>
+</div>

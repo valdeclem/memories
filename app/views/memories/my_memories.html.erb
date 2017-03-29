@@ -1,37 +1,30 @@
-<header class="intro-header" style="background-image: url(<%=image_url 'home-bg.jpg' %>)">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>My memories</h1>
-                    <hr class="small">
-                    <span class="subheading">L'humaniste que j'étais et que je suis toujours aujourd'hui ...</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: 'Ma Memorie', subheading: "L'humaniste que j'étais et que je suis toujours aujourd'hui ..."  %>
 
 <!-- Main Content -->
 <div class="container">
-  <h1>Memories</h1>
-    <div class="row">
-      <% @memories.each do |memory| %>
-          <div class="col-lg-6">
-            <div class="col-lg-12">
-              <%= memory.histoire %>
-            </div>
-            <div class="col-lg-12">
-              <%= link_to 'Show', memory %>
-              <%= link_to 'Edit', edit_memory_path(memory) %>
-              <%= link_to 'Destroy', memory, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <hr>
-            </div>
+  <p id="notice"><%= notice %></p>
+
+
+
+
+
+
+      <div class="container-fluid">
+        <div class="row">
+    			<div class="masonry-container">
+            <% @memories.each do |memory| %>
+              <div class="col-md-3 col-sm-3 col-xs-6 item">
+                <%= link_to memory do %>
+                  <div class="col-lg-12 text-center">
+                    <%= memory.histoire %>
+                    <hr>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
           </div>
-      <% end %>
-    </div>
+        </div>
+      </div>
 
     <div class="row">
       <div class="col-lg-12">
