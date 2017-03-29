@@ -1,6 +1,6 @@
 
   <%= simple_form_for memory do |f| %>
-    <%= f.input :histoire %>
+    <%= f.input :histoire, class:"" %>
 
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.submit %>
