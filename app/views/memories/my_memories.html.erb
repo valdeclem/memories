@@ -1,34 +1,28 @@
-<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: 'Ma Memorie', subheading: "L'humaniste que j'étais et que je suis toujours aujourd'hui ..."  %>
+<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: 'Mes souvenirs', subheading: ""  %>
 
 <!-- Main Content -->
 <div class="container">
   <p id="notice"><%= notice %></p>
-
-
-
-
-
-
-      <div class="container-fluid">
-        <div class="row">
-    			<div class="masonry-container">
-            <% @memories.each do |memory| %>
-              <div class="col-md-3 col-sm-3 col-xs-6 item">
-                <%= link_to memory do %>
-                  <div class="col-lg-12 text-center">
-                    <%= memory.histoire %>
-                    <hr>
-                  </div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+    <div class="container-fluid">
+      <div class="row">
+  			<div class="masonry-container">
+          <% @memories.each do |memory| %>
+            <div class="col-md-3 col-sm-3 col-xs-6 item">
+              <%= link_to memory do %>
+                <div class="col-lg-12 text-center">
+                  <%= memory.histoire %>
+                  <hr>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
+    </div>
 
     <div class="row">
       <div class="col-lg-12">
-        <%= link_to 'New Memory', new_memory_path %>
+        <%= link_to 'Ajouter un souvenir', new_memory_path %>
       </div>
     </div>
 </div>

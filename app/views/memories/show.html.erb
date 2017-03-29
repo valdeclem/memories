@@ -1,4 +1,4 @@
-<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: 'Ma Memorie', subheading: "L'humaniste que j'étais et que je suis toujours aujourd'hui ..."  %>
+<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: '', subheading: ""  %>
 <div class="container">
   <p id="notice"><%= notice %></p>
 
@@ -8,5 +8,6 @@
   </p>
 
   <%= link_to 'Edit', edit_memory_path(@memory) %> |
+  <%= link_to 'Destroy', memory_path, method: :delete, data: { confirm: 'Are you sure?' } %> |
   <%= link_to 'Back', memories_path %>
 </div>
