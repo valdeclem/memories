@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root :to => 'static#home'
 
   get '/about' => 'static#about'
-  get '/contact' => 'static#contact'
   get '/perso' => 'memories#my_memories'
+
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
 
 end
