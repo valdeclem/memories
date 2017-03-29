@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   get '/contact' => 'static#contact'
   get '/perso' => 'memories#my_memories'
 
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
+
 end
