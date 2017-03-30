@@ -5,10 +5,13 @@
       <%= image_tag "img.jpg", class:"img-responsive img-show" %>
   </div>
   <div class="col-lg-9">
+  
     <p>
       <!-- <h1><%= "Le #{@memory.created_at}" %></h1> -->
       <div class="souvenirs-content">
-        <%= @memory.histoire %>
+        <p><span id="maj_text" class="title-header"><%= @memory.histoire[0..0].upcase%></span>
+        <%= @memory.histoire[1..@memory.histoire.length]%>
+        </p>
       </div>
     </p>
     <div class="pull-right">
