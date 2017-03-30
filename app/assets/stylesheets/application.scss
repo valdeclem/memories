@@ -36,11 +36,9 @@ cursor:pointer;
   max-width: 100%;
   margin:0 auto;
 }
-
 .home {
   height:80vh;
 }
-
 .vertical-center {
   position: relative;
     top: 50%;
@@ -50,15 +48,18 @@ cursor:pointer;
          -o-transform: translateY(50%);
             transform: translateY(50%);
 }
-
 .control-label {
   font-size:45px;
 }
-
 .navbar-default .navbar-nav > li > a, p  {
   font-size: 20px;
 }
-
 footer {
   margin-top: 200px;
+}
+.flash-msg {
+  top:70px;
+  position:absolute;
+  max-width: 500px;
+  width: 100%;
 }

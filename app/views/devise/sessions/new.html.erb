@@ -19,6 +19,13 @@
     <hr>
       <%= f.input :email, label:false, placeholder: "Email" %>
       <%= f.input :password, label:false, placeholder: "Mot de passe"%>
+      <% flash.each do | name,msg| %>
+        <% if name == "alert" %>
+          <div class="alert alert-danger fade in">
+            <%= msg %>
+          </div>
+        <% end %>
+      <% end %>
       <%= f.button :submit, "Se connecter"%>
     <% end %>
     <br>
