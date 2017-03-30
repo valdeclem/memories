@@ -1,4 +1,4 @@
-<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: 'Mes souvenirs', subheading: ""  %>
+<%= render 'layouts/header.html.erb', title: 'Mes souvenirs', subheading: "#{current_user.firstname} #{current_user.lastname}"  %>
 
 <!-- Main Content -->
 <div class="container">
@@ -7,7 +7,7 @@
       <div class="row">
   			<div class="masonry-container">
           <% @memories.each do |memory| %>
-            <div class="col-md-3 col-sm-3 col-xs-6 item">
+            <div class="col-md-4 col-sm-6 col-xs-12 item">
               <%= link_to memory do %>
                 <div class="col-lg-12 text-center">
                   <%= memory.histoire %>

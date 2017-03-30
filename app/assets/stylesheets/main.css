@@ -17,11 +17,11 @@
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
-	
+
 }
 body input:required:valid,
 body textarea:required:valid {
-	
+
 }
 body {
 	font-family: sans-serif;
@@ -42,7 +42,7 @@ body {
 	min-height: 1px;
 }
 .item {
-	height: 33.34vh;
+	height: 300px;
 }
 .item img {
 	width: 100%;
