@@ -1,3 +1,37 @@
-<script type="text/javascript">
+<%= render 'layouts/header.html.erb', title: 'Accès à ma mémoire', subheading: ""  %>
+
+<div class="container">
+  <div class="col-sm-5">
+    <h2 class="text-center">Inscription</h1>
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
+    <hr>
+      <%= f.input :firstname, label:false, placeholder: 'Prénom', error: 'Le prénom est obligatoire.' %>
+      <%= f.input :lastname, label:false, placeholder: 'Nom', error: 'Username is mandatory, please specify one' %>
+      <%= f.input :email, label:false, placeholder: 'Email' %>
+      <%= f.input :password, label:false, placeholder: 'Mot de passe' %>
+      <%= f.input :password_confirmation, label:false, placeholder:false, placeholder: 'Confirmation du mot de passe' %>
+      <%= f.button :submit, "Créer un compte"%>
+    <% end %>
+  </div>
+  <div class="col-sm-5 col-sm-offset-2">
+    <h2 class="text-center">Déjà Inscrit ?</h1>
+      <% flash.each do | name,msg| %>
+        <% if name == "alert" %>
+          <div class="alert alert-danger fade in">
+            <%= msg %>
+          </div>
+        <% end %>
+      <% end %>
+    <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
+    <hr>
+      <%= f.input :email, label:false, placeholder: "Email" %>
+      <%= f.input :password, label:false, placeholder: "Mot de passe"%>
+      <%= f.button :submit, "Se connecter"%>
+    <% end %>
+    <br>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+<!-- <script type="text/javascript">
     window.location.href="/users/sign_in"
-</script>
+</script> -->
