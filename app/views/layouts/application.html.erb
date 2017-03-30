@@ -64,7 +64,16 @@
     </nav>
     <!-- Page Header -->
     <div class="container">
+      <div class="flash-msg text-center">
+        <% flash.each do | name,msg| %>
+          <div class="alert alert-<%= name %> fade in">
+            <%= msg %>
+          </div>
+        <% end %>
+      </div>
+
     <%= yield %>
+
   </div>
 
     <!-- Footer -->

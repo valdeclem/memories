@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create!({:email => "admin@gmail.com", :password => "111111", :password_confirmation => "111111", :firstname => "Clément", :lastname => "Valderrama" })
+User.create!({:email => "user1@gmail.com", :password => "111111", :password_confirmation => "111111", :firstname => "Alissa", :lastname => "Ruiz" })
+User.create!({:email => "user2@gmail.com", :password => "111111", :password_confirmation => "111111", :firstname => "Elie", :lastname => "Margoet" })
 
-User.create!({:email => "admin@gmail.com", :password => "111111", :password_confirmation => "111111" })
-User.create!({:email => "user1@gmail.com", :password => "111111", :password_confirmation => "111111" })
-User.create!({:email => "user2@gmail.com", :password => "111111", :password_confirmation => "111111" })
-
+title = ["Je suis ici","Bordeaux","Un monde magnifique","La grande Chine","Juste un petit tour","Allo on m'entend?"]
 (1..5).each do |i|
   Memory.create!(histoire: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat purus dapibus fermentum sagittis. Fusce in tempus felis. Phasellus a erat ut lorem lacinia bibendum. Vivamus viverra facilisis neque, in scelerisque urna pharetra vel. Donec a est mauris. Integer eget metus quis eros egestas elementum. Integer bibendum risus hendrerit dapibus tempor. Fusce placerat in orci vitae tincidunt.",
-  category: "text", user_id: 1)
+  category: "text", user_id: 1, title: title[i])
 end

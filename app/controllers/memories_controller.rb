@@ -32,7 +32,7 @@ class MemoriesController < ApplicationController
   def create
     @memory = Memory.new(memory_params)
       if @memory.save
-        redirect_to "/perso", notice: 'Votre souvenir a bien été créé'
+        redirect_to "/perso", info: 'Votre souvenir a bien été créé'
       else
         render :new
       end
@@ -43,7 +43,7 @@ class MemoriesController < ApplicationController
   def update
     respond_to do |format|
       if @memory.update(memory_params)
-        format.html { redirect_to @memory, notice: 'Votre souvenir a bien été modifié' }
+        format.html { redirect_to @memory, info: 'Votre souvenir a bien été modifié' }
         format.json { render :show, status: :ok, location: @memory }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class MemoriesController < ApplicationController
   def destroy
     @memory.destroy
     respond_to do |format|
-      format.html { redirect_to memories_url, notice: 'Votre souvenir a été supprimé' }
+      format.html { redirect_to memories_url, info: 'Votre souvenir a été supprimé' }
       format.json { head :no_content }
     end
   end
