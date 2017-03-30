@@ -9,8 +9,8 @@
           <% @memories.each do |memory| %>
             <div class="col-md-4 col-sm-6 col-xs-12 item">
               <%= link_to memory do %>
-                <div class="col-lg-12 text-center">
-                  <%= memory.histoire %>
+                <div class="col-lg-12 text-center title-memories">
+                  <%= memory.title %>
                   <hr>
                 </div>
               <% end %>

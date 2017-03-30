@@ -1,9 +1,9 @@
-<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: '', subheading: ""  %>
+<%= render 'layouts/header.html.erb', img: 'home-bg.jpg', title: "#{@memory.title}", subheading: ""  %>
 <div class="container">
   <p id="notice"><%= notice %></p>
 
   <p>
-    <strong>Histoire:</strong>
+    <h1>Mon souvenir</h1>
     <%= @memory.histoire %>
   </p>
 
