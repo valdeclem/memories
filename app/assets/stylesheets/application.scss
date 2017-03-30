@@ -21,6 +21,7 @@
 	@import "font-awesome";
 
  @import url('https://fonts.googleapis.com/css?family=Raleway');
+
  @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
  
 .logo {
@@ -35,7 +36,7 @@
   height:80vh;
 }
 
-.vertical_center {
+.vertical-center {
   position: relative;
     top: 50%;
     -webkit-transform: translateY(50%);
@@ -48,4 +49,8 @@
 
 p {
   font-size: 20px !important;
+}
+
+a {
+  font-size:"25px";
 }
