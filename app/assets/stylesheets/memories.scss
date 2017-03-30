@@ -1,6 +1,14 @@
 // Place all the styles related to the Memories controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.site-heading * {
+  color:black;
+  font-family: hand;
+}
+.title-header {
+  font-family: 'Dancing Script', cursive;
+  font-size: 110px !important;
+}
 
 a {
   font-size: 20px !important;
