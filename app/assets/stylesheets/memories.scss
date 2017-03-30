@@ -54,11 +54,26 @@ a {
 }
 
 .readmore {
-  background-color: rgba(237,217,254,0.4);
+  background-color: rgba(237,217,254,1);
+  color: black;
+  font-size: 11px;
+  text-transform: none;
+}
+.back {
+  background-color: #FFDCAF;
+  color: black;
+  font-size: 11px;
+  text-transform: none;
+}
+.edit {
+  background-color: #FFEEAE;
   color: black;
   font-size: 11px;
   text-transform: none;
 }
 .item-content p {
   color:#95989A;
+}
+.form-control {
+  font-size: 20px !important;
 }
