@@ -21,7 +21,7 @@
 	@import "font-awesome";
 
  @import url('https://fonts.googleapis.com/css?family=Raleway');
- 
+
 .logo {
   width:180px;
   position:absolute;
@@ -34,7 +34,7 @@
   height:80vh;
 }
 
-.vertical_center {
+.vertical-center {
   position: relative;
     top: 50%;
     -webkit-transform: translateY(50%);
@@ -46,4 +46,8 @@
 
 p {
   font-size: 20px !important;
+}
+
+a {
+  font-size:"25px";
 }

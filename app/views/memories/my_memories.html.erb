@@ -4,22 +4,30 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
     <div class="container-fluid">
-        <div class="row">
-      <div class="col-1 btn">
-        <%= link_to 'Ajouter un souvenir', new_memory_path %>
+      <div class="row">
+        <div class="col-xs-12 text-center btn-add-memories">
+            <%= link_to 'Ajouter un souvenir', new_memory_path, class:"btn AjoutBtn"%>
+        </div>
       </div>
-    </div>
 
       <div class="row">
   			<div class="masonry-container">
           <% @memories.each do |memory| %>
             <div class="col-md-4 col-sm-6 col-xs-12 item">
-              <%= link_to memory do %>
-                <div class="col-lg-12 text-center title-memories">
-                  <%= memory.title %>
-                  <hr>
+              <div class="item-content text-center">
+                <div class="overflow">
+                  <%= link_to memory do %>
+                  <div class="col-lg-12 text-center ">
+                    <h2 class="title-memories"><%= memory.title %></h2>
+                    <p><%= memory.histoire %></p>
+                  </div>
+                  <% end %>
                 </div>
-              <% end %>
+                <p class="text-center">...</p>
+                <%= link_to memory do %>
+                  <div class="btn readmore">Lire la suite</div>
+                <% end %>
+              </div>
             </div>
           <% end %>
         </div>

@@ -11,5 +11,54 @@
 }
 
 a {
-  font-size: 20px !important;
+  font-size: 20px;
+}
+
+.souvenirs-content {
+  font-size: 20px;
+}
+
+.AjoutBtn{
+  background-color: #FFDCAF;
+  color: #95989A;
+  text-decoration: none;
+  font-size: 40px;
+  padding: 25px !important;
+}
+.btn {
+  font-size:20px !important;
+}
+.btn-add-memories {
+  margin:-100px 0 100px 0;
+}
+
+.item-content {
+  background-color: rgba(1,1,1,0);
+  margin:20px;
+  height:300px;
+}
+.overflow {
+  height:200px;
+  overflow: hidden;
+}
+
+.vcenter {
+    vertical-align: middle;
+    float: none;
+}
+
+.title-memories{
+  color: black;
+  font-family: 'Dancing Script', cursive;
+  font-size: 45px;
+}
+
+.readmore {
+  background-color: rgba(237,217,254,0.4);
+  color: black;
+  font-size: 11px;
+  text-transform: none;
+}
+.item-content p {
+  color:#95989A;
 }
