@@ -1,8 +1,9 @@
 
   <%= simple_form_for memory do |f| %>
     <%= f.input :title, label: 'Titre' %>
-    <%= f.input :histoire, label: 'Souvenir', :input_html => {:rows => 10} %>
+    <%= f.input :histoire, label: 'Souvenir', :input_html => {:rows => 20} %>
 
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit "Ajouter le souvenir" %>
+    <%= f.submit "Enregistrer", class:"btn edit" %>
+    <%= link_to 'Retour', memories_path, class:"btn back" %>
   <% end %>

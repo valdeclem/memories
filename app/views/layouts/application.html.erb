@@ -31,7 +31,9 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <%= image_tag "LogoMESMOTS.png", class:"logo" %>
+                <%= link_to root_path, class: "logo" do %>
+                  <%= image_tag "LogoMESMOTS.png", class:"logo" %>
+                <% end %>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,25 +66,19 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <%= link_to "https://twitter.com/mesmotsfrance/" do %>
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            <% end %>
-                        </li>
-                        <li>
-                            <%= link_to "https://www.facebook.com/mesmotsfrance/" do %>
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            <% end %>
-                        </li>
-                    </ul>
+                <div class="text-center">
+                  <%= link_to "https://twitter.com/mesmotsfrance/" do %>
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                  <% end %>
+                  <%= link_to "https://www.facebook.com/mesmotsfrance/" do %>
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                      </span>
+                  <% end %>
                     <p class="copyright text-muted">Copyright &copy; <%= app %> 2017</p>
                 </div>
             </div>

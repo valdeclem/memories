@@ -2,6 +2,7 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
   <div class="col-lg-3">
+      <%= image_tag "img.jpg", class:"img-responsive img-show" %>
   </div>
   <div class="col-lg-9">
     <p>
@@ -11,7 +12,8 @@
       </div>
     </p>
     <div class="pull-right">
-      <%= link_to 'Retour', memories_path %>
+      <%= link_to 'Modifier', edit_memory_path, class:"btn edit" %>
+      <%= link_to 'Retour', memories_path, class:"btn back" %>
     </div>
 
   </div>
