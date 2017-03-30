@@ -34,6 +34,7 @@ cursor:pointer;
 .logoHome {
   z-index: -2;
   max-width: 100%;
+  margin:0 auto;
 }
 
 .home {
@@ -49,14 +50,11 @@ cursor:pointer;
          -o-transform: translateY(50%);
             transform: translateY(50%);
 }
-p {
-  font-size: 20px !important;
-}
-a {
-  font-size:"25px";
-}
 
 .control-label {
   font-size:45px;
-  font-family: 'Dancing Script', cursive;
+}
+
+.navbar-default .navbar-nav > li > a, p  {
+  font-size: 20px;
 }

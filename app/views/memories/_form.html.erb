@@ -1,7 +1,7 @@
 
   <%= simple_form_for memory do |f| %>
-    <%= f.input :title, label: 'Titre' %>
-    <%= f.input :histoire, label: 'Souvenir', :input_html => {:rows => 20} %>
+    <%= f.input :title, placeholder: 'Titre', label:false %>
+    <%= f.input :histoire, label:false, placeholder: 'Raconte ton histoire...', :input_html => {:rows => 10} %>
 
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.submit "Enregistrer", class:"btn edit" %>
