@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @mapg.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @mapg.longitude %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @mapg.adress %>
+</p>
+
+<p>
+  <strong>Memories:</strong>
+  <%= @mapg.memories %>
+</p>
+
+<%= link_to 'Edit', edit_mapg_path(@mapg) %> |
+<%= link_to 'Back', mapgs_path %>

@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330082944) do
+ActiveRecord::Schema.define(version: 20170331000748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "mapgs", force: :cascade do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "adress"
+    t.integer  "memories_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["memories_id"], name: "index_mapgs_on_memories_id", using: :btree
+  end
 
   create_table "memories", force: :cascade do |t|
     t.text     "histoire"
@@ -22,6 +32,10 @@ ActiveRecord::Schema.define(version: 20170330082944) do
     t.string   "category"
     t.integer  "user_id"
     t.string   "title"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "adress"
+    t.date     "date"
     t.index ["user_id"], name: "index_memories_on_user_id", using: :btree
   end
 
@@ -44,5 +58,6 @@ ActiveRecord::Schema.define(version: 20170330082944) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "mapgs", "memories", column: "memories_id"
   add_foreign_key "memories", "users"
 end

@@ -1,0 +1,45 @@
+<script src="//maps.google.com/maps/api/js?key=AIzaSyBNPnScVryDX4K00Nde_Y8A3kdn8i89dPg"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
+<%= render 'layouts/header.html.erb', title: 'Mes souvenirs', subheading: "#{current_user.firstname} #{current_user.lastname}"  %>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 text-center btn-add-memories">
+            <%= link_to 'Ajouter un souvenir', new_memory_path, class:"btn AjoutBtn"%>
+        </div>
+      </div>
+        <section id="cd-timeline" class="cd-container">
+          <% @memories.each do |memory| %>
+            <%= link_to memory do %>
+              <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-location">
+                  <%= image_tag "cd-icon-location.svg" %>
+                </div> <!-- cd-timeline-img -->
+                <div class="cd-timeline-content">
+                  <h2 class="title-memories"><%= memory.title %></h2>
+                  <p><%= memory.histoire %></p>
+                  <%= link_to "Lire la suite", memory,class:"cd-read-more" %>
+                  <span class="cd-date"><%= memory.date %></span>
+                </div> <!-- cd-timeline-content -->
+              </div> <!-- cd-timeline-block -->
+            <% end %>
+          <% end %>
+        </section>
+    </div>
+    <div style='width: 800px;'>
+      <div id="map" style='width: 800px; height: 400px;'></div>
+    </div>
+</div>
+
+
+<script>
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+markers = handler.addMarkers(<%=raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+});
+</script>
