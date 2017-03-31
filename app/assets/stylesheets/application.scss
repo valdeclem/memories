@@ -23,7 +23,12 @@
  @import url('https://fonts.googleapis.com/css?family=Raleway');
 
  @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-
+p {
+  font-size: 20px;
+}
+ul > li > a {
+  font-size:16px !important;
+}
 .logo {
   width:180px;
   position:absolute;
@@ -53,9 +58,8 @@ footer {
 }
 
 .flash-msg {
-  top:70px;
+  top:65px;
   position:absolute;
-  max-width: 500px;
   width: 100%;
 }
 
