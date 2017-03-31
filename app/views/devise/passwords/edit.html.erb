@@ -1,37 +1,31 @@
-<header class="intro-header" style="background-image: url(<%=image_url 'feuille.jpg' %>)">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Change your password</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<%= render 'layouts/header.html.erb', title: 'Changer de mot de passe', subheading: ""  %>
+
 
 <div class="container">  
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <% flash.each do | name,msg| %>
+    <% if name == "alert" %>
+      <div class="alert alert-danger fade in">
+        <%= msg %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, :class => 'form-horizontal' }) do |f| %>
   <%= devise_error_messages! %>
+
+
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+    <%= f.input :password, label:false, placeholder: 'Mot de passe (6 caractères minimum)' %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.input :password_confirmation, label:false, autocomplte: "off", placeholder: 'Confirmation du mot de passe' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Change my password" %>
+    <%= f.button :submit, "Changer mon mot de passe"%>
   </div>
   <% end %>
 
