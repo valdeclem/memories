@@ -64,22 +64,24 @@
     </nav>
     <!-- Page Header -->
     <div class="container">
-      <div class="flash-msg text-center">
-        <% flash.each do | name,msg| %>
+      <div class="col-xs-12 text-center">
+        <div class="flash-msg text-center">
+          <% flash.each do | name,msg| %>
           <% if name == "alert" %>
-            <div class="alert alert-danger fade in">
-              <%= msg %>
-            </div>
+          <div class="alert alert-danger fade in">
+            <%= msg %>
+          </div>
           <% elsif name == "notice" %>
-            <div class="alert alert-success fade in">
-              <%= msg %>
-            </div>
+          <div class="alert alert-success fade in">
+            <%= msg %>
+          </div>
           <% else %>
-            <div class="alert alert-<%= name %> fade in">
-              <%= msg %>
-            </div>
+          <div class="alert alert-<%= name %> fade in">
+            <%= msg %>
+          </div>
           <% end %>
-        <% end %>
+          <% end %>
+        </div>
       </div>
 
     <%= yield %>
