@@ -14,6 +14,16 @@ class MemoriesController < ApplicationController
   end
   def tl_memories
     @memories = current_user.memories
+    @hash = Gmaps4rails.build_markers(Memory.all) do |memo, marker|
+    marker.lat memo.latitude
+    marker.lng memo.longitude
+    marker.infowindow memo.histoire
+    # marker.picture ({
+    #     "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+    #     "width":  32,
+    #     "height": 32
+    #   })
+end
   end
 
   # GET /memories/1
@@ -73,6 +83,6 @@ class MemoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def memory_params
-      params.require(:memory).permit(:histoire, :title, :category, :user_id, :adress)
+      params.require(:memory).permit(:histoire, :title, :category, :user_id, :adress, :date)
     end
 end
