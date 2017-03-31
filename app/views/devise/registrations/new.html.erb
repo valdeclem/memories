@@ -1,5 +1,5 @@
 <%= render 'layouts/header.html.erb', title: 'Accès à ma mémoire', subheading: ""  %>
-
+hin
 <div class="container">
   <div class="col-sm-5">
     <h2 class="text-center">Inscription</h1>
@@ -8,8 +8,8 @@
       <%= f.input :firstname, label:false, placeholder: 'Prénom', error: 'Le prénom est obligatoire.' %>
       <%= f.input :lastname, label:false, placeholder: 'Nom', error: 'Username is mandatory, please specify one' %>
       <%= f.input :email, label:false, placeholder: 'Email' %>
-      <%= f.input :password, label:false, placeholder: 'Mot de passe' %>
-      <%= f.input :password_confirmation, label:false, placeholder:false, placeholder: 'Confirmation du mot de passe' %>
+      <%= f.input :password, label:false, hint: 'Votre mot de passe doit contenir 3 caractères minimums', placeholder: 'Mot de passe' %>
+      <%= f.input :password_confirmation, label:false, placeholder: 'Confirmation du mot de passe' %>
       <%= f.button :submit, "Créer un compte"%>
     <% end %>
   </div>
