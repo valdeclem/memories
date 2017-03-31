@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mapgs
   get 'registrations/devise'
 
   resources :memories
