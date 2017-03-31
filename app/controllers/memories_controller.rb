@@ -5,7 +5,6 @@ class MemoriesController < ApplicationController
   # GET /memories
   # GET /memories.json
   def index
-    @memories
     redirect_to "/perso"
   end
 
