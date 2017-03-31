@@ -12,6 +12,9 @@ class MemoriesController < ApplicationController
   def my_memories
     @memories = current_user.memories
   end
+  def tl_memories
+    @memories = current_user.memories
+  end
 
   # GET /memories/1
   # GET /memories/1.json

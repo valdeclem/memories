@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'masonry-rails'
 gem 'mail_form'
 gem 'figaro'
+gem 'gmaps4rails'
 gem 'geocoder'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mapgs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Adress</th>
+      <th>Memories</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mapgs.each do |mapg| %>
+      <tr>
+        <td><%= mapg.latitude %></td>
+        <td><%= mapg.longitude %></td>
+        <td><%= mapg.adress %></td>
+        <td><%= mapg.memories %></td>
+        <td><%= link_to 'Show', mapg %></td>
+        <td><%= link_to 'Edit', edit_mapg_path(mapg) %></td>
+        <td><%= link_to 'Destroy', mapg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mapg', new_mapg_path %>
